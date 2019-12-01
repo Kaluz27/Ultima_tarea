@@ -3,7 +3,7 @@ import Proceso from './Proceso.js';
 
 class Main{
     constructor(){
-        let view = new Proceso(document.querySelector('#preorder'), document.querySelector('#posorder'));
+        let r = new Proceso(document.querySelector('#preorder'), document.querySelector('#posorder'));
         document.querySelector('#calcular').addEventListener('click', () => {
 
                 let valores = new Array();
@@ -23,13 +23,14 @@ class Main{
                 for(let i=0;i<valores.length;i++){
                     
                     let nodo = new Nodo(valores[i]);
-                    view.agregarComponente(nodo);
+                    r.agregarNodo(nodo);
                 }
-                view.crearArbol();
-                view.preOrder();
-                view.posOrder();
-                view.Calcular(resultado);
+                r.crearArbol();
+                r.preOrder();
+                r.posOrder();
+                r.Calcular(resultado);
         })
     }
+
 }
 let main = new Main();
